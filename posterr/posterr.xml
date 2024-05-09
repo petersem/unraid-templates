@@ -18,8 +18,8 @@
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1715238648</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
+  <DonateText>Please support future development</DonateText>
+  <DonateLink>https://www.paypal.com/paypalme/thanksmp</DonateLink>
   <Requires/>
   <Config Name="Host Port 1" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">9876</Config>
   <Config Name="Config folder" Target="/usr/src/app/config appdata" Default="" Mode="rw" Description="Path for Posterr config files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/posterr</Config>
