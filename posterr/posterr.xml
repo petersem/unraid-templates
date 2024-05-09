@@ -22,7 +22,7 @@
   <DonateLink>https://www.paypal.com/paypalme/thanksmp</DonateLink>
   <Requires/>
   <Config Name="Host Port 1" Target="3000" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">9876</Config>
-  <Config Name="Config folder" Target="/usr/src/app/config appdata" Default="" Mode="rw" Description="Path for Posterr config files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/posterr</Config>
+  <Config Name="Config folder" Target="/usr/src/app/config" Default="" Mode="rw" Description="Path for Posterr config files" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/posterr</Config>
   <Config Name="Custom picture folder" Target="/usr/src/app/public/custom" Default="" Mode="rw" Description="Path for custom pictures" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/posterr/custom</Config>
   <Config Name="Time Zone" Target="TZ" Default="" Mode="" Description="Your local TZ timezone (List of tz database time zones - https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)" Type="Variable" Display="always" Required="true" Mask="false">Australia/Brisbane</Config>
   <Config Name="Base path" Target="BASEPATH" Default="" Mode="" Description="[Optional] Only needed if using a reverse proxy with a sub path for posterr. eg https:/myapps.xyz/poster" Type="Variable" Display="always" Required="false" Mask="false"/>
