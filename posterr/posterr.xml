@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/164725-support-posterr/</Support>
   <Project>https://github.com/petersem/posterr</Project>
-  <Overview>Media display software for Plex, Sonarr, Radarr, and Readarr. (Just like the display screens in movie theatre foyers)</Overview>
+  <Overview>Media poster display software for Plex, Sonarr, Radarr, and Readarr. (Just like the display screens in movie theatre foyers)</Overview>
   <Category>MediaApp:Video MediaApp:Music MediaApp:Books MediaApp:Other Status:Stable</Category>
   <WebUI>http://[IP]:[PORT:9876]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/petersem/unraid-templates/main/posterr/posterr.xml</TemplateURL>
