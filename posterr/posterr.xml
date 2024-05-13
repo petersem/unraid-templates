@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>posterr</Name>
   <Repository>petersem/posterr</Repository>
-  <Registry>https://hub.docker.com/petersem/posterr/</Registry>
+  <Registry>https://hub.docker.com/r/petersem/posterr</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>

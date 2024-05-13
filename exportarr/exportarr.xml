@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>exportarr</Name>
+  <Repository>petersem/exportarr</Repository>
+  <Registry>https://hub.docker.com/r/petersem/exportarr</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/165092-support-exportarr/</Support>
+  <Project>https://github.com/petersem/exportarr</Project>
+  <Overview>Exportarr allows you to share your Radarr/Sonarr lists with others, without having to give them your Radarr API key, or open external ports to Radarr/Sonarr. :) Others just copy the URL for the genre they want, then use this as an importable list in Sonarr/Radarr.  Then, as you add new titles to your Sonarr/Radarr, your friends will see them updated daily in thier Sonarr/Radarr apps. &#xD;
+</Overview>
+  <Category>MediaServer:Other Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/petersem/unraid-templates/main/exportarr/exportarr.xml</TemplateURL>
+  <Icon>https://github.com/petersem/exportarr/blob/master/public/favicons/android-chrome-512x512.png?raw=true</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1715594827</DateInstalled>
+  <DonateText>Please support future development</DonateText>
+  <DonateLink>https://www.paypal.com/paypalme/thanksmp</DonateLink>
+  <Requires/>
+  <Config Name="Radarr URL" Target="RADARR_URL" Default="" Mode="" Description="Fully qualified URL to Radarr, including any non-standard ports. E.G http://n.n.n.n:7878" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Radarr API Token" Target="RADARR_TOKEN" Default="" Mode="" Description="Token from Radarr - Settings - General" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Sonarr URL" Target="SONARR_URL" Default="" Mode="" Description="Fully qualified URL to Sonarr, including any non-standard ports. E.G http://n.n.n.n:8989" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Sonarr API Token" Target="SONARR_TOKEN" Default="" Mode="" Description="Token from Sonarr- Settings - General" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Port" Target="3000" Default="" Mode="tcp" Description="The port that you want to access Exportarr on. " Type="Port" Display="always" Required="true" Mask="false">1234</Config>
+</Container>

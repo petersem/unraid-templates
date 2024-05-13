@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>monocker</Name>
   <Repository>petersem/monocker</Repository>
-  <Registry>https://github.com/petersem/monocker</Registry>
+  <Registry>https://hub.docker.com/r/petersem/monocker</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
@@ -40,7 +40,7 @@
 </Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI/>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/petersem/unraid-templates/main/monocker/monocker.xml</TemplateURL>
   <Icon>https://github.com/petersem/monocker/blob/master/android-chrome-512x512.png?raw=true</Icon>
   <ExtraParams/>
   <PostArgs/>
