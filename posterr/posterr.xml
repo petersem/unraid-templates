@@ -11,7 +11,7 @@
   <Project>https://github.com/petersem/posterr</Project>
   <Overview>Media poster display software for Plex, Sonarr, Radarr, and Readarr. (Just like the display screens in movie theatre foyers)</Overview>
   <Category>MediaApp:Video MediaApp:Music MediaApp:Books MediaApp:Other Status:Stable</Category>
-  <WebUI>http://[IP]:[PORT:9876]</WebUI>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/petersem/unraid-templates/main/posterr/posterr.xml</TemplateURL>
   <Icon>https://github.com/petersem/posterr/blob/master/public/favicons/android-chrome-512x512.png?raw=true</Icon>
   <ExtraParams/>
