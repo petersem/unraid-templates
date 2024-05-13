@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>monocker</Name>
+  <Repository>petersem/monocker</Repository>
+  <Registry>https://github.com/petersem/monocker</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/165085-support-monocker/</Support>
+  <Project>https://github.com/petersem/monocker</Project>
+  <Overview>Monitors Docker (MONitors dOCKER) containers and alerts on 'state' change.&#xD;
+&#xD;
+      # Optional server name for alerts&#xD;
+        SERVER_LABEL: Prod&#xD;
+&#xD;
+      # Specify the messaging platform and details, or leave blank if only wanting container logs (pick one only)&#xD;
+        MESSAGE_PLATFORM: telegram@your_bot_id@your_chat_id&#xD;
+        MESSAGE_PLATFORM: pushbullet@your_api_key@your_device_id&#xD;
+        MESSAGE_PLATFORM: pushover@your_user_key@your_app_api_token&#xD;
+        MESSAGE_PLATFORM: discord@webhook_url&#xD;
+      &#xD;
+      # Optional - includes or excludes specified containers - default behaviour is false&#xD;
+        LABEL_ENABLE: 'false'&#xD;
+      &#xD;
+      # Optional - only show when container state changes to being offline (paused, exited, running (unhealthy), or dead) - default is false&#xD;
+        ONLY_OFFLINE_STATES: 'false'&#xD;
+      &#xD;
+      # [Optional] - Regardless of any other settings, you can ignore or include 'exited'. (So it won't alert if you manually stop a container)&#xD;
+        EXCLUDE_EXITED: 'false'      &#xD;
+&#xD;
+      # [Optional] - Set the poll period in seconds. Defaults to 10 seconds, which is also the minimum. &#xD;
+        PERIOD: 10&#xD;
+ &#xD;
+     # [Optional] - Supress startup messages from being sent. Default is false&#xD;
+       DISABLE_STARTUP_MSG: 'false'&#xD;
+ &#xD;
+     # [optional] - adds SHA ID for all container references. 'true' or 'false' (default)&#xD;
+       SHA: 'false'&#xD;
+</Overview>
+  <Category>Tools: Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://github.com/petersem/monocker/blob/master/android-chrome-512x512.png?raw=true</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1715586740</DateInstalled>
+  <DonateText>Please support future development</DonateText>
+  <DonateLink>https://www.paypal.com/paypalme/thanksmp</DonateLink>
+  <Requires/>
+  <Config Name="Docker" Target="/var/run/docker.sock" Default="" Mode="ro" Description="Allows Monocker to access the list of running containers on Unraid. (Do not change or remove this!)" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="Server label" Target="SERVER_LABEL" Default="" Mode="" Description="[Optional] Allows you to add a server-specific label to alert messages. Handy if you have multiple servers running Docker." Type="Variable" Display="always" Required="false" Mask="false">Unraid</Config>
+  <Config Name="Message platform" Target="MESSAGE_PLATFORM" Default="" Mode="" Description="The details for connecting to a specific message platform. " Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Label Enable" Target="LABEL_ENABLE" Default="false" Mode="" Description="[Optional] Includes or excludes specified containers that have the " Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Only offline states" Target="ONLY_OFFLINE_STATES" Default="false" Mode="" Description="[Optional] Only monitor container state changing to being offline. (Paused, Exited, Running (unhealth), or Dead). Default is false." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Exclude exited" Target="EXCLUDE_EXITED" Default="false" Mode="" Description="[Optional] Regardless of any other settings, you can  choose to ignore or include container states moving to 'Exited'. (This will optionally show or ignore manual stops or containers). " Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Period" Target="PERIOD" Default="10" Mode="" Description=" [Optional] - Set the poll period in seconds. Defaults to 10 seconds, which is also the minimum. " Type="Variable" Display="always" Required="false" Mask="false">10</Config>
+  <Config Name="Disable startup messages" Target="DISABLE_STARTUP_MSG" Default="false" Mode="" Description="[Optional] Suppress startup messages being sent when Monocker starts up" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="SHA" Target="SHA" Default="false" Mode="" Description="[optional] - adds SHA ID for all container alerts. 'true' or 'false' (default)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+</Container>
