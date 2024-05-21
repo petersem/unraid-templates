@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>monocker</Name>
   <Repository>petersem/monocker</Repository>
-  <Registry>https://hub.docker.com/r/petersem/monocker</Registry>
+  <Registry/>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
@@ -12,13 +12,20 @@
   <Overview>Monitors Docker (MONitors dOCKER) containers and alerts on 'state' change.&#xD;
 &#xD;
       # Optional server name for alerts&#xD;
-        SERVER_LABEL: Prod&#xD;
+        SERVER_LABEL: 'Prod'&#xD;
+      # Optional avatar image URL to add to messages. Handy if you are running Monocker on different machines&#xD;
+      # -&amp;gt; ONLY supported by discord, slack &amp;amp; ntfy&#xD;
+      SERVER_AVATAR: 'https://content.invisioncic.com/u329766/monthly_2024_05/monocker.png.ba5ffdb390b627097d2a53645cf87350.png'&#xD;
 &#xD;
       # Specify the messaging platform and details, or leave blank if only wanting container logs (pick one only)&#xD;
-        MESSAGE_PLATFORM: telegram@your_bot_id@your_chat_id&#xD;
-        MESSAGE_PLATFORM: pushbullet@your_api_key@your_device_id&#xD;
-        MESSAGE_PLATFORM: pushover@your_user_key@your_app_api_token&#xD;
-        MESSAGE_PLATFORM: discord@webhook_url&#xD;
+      MESSAGE_PLATFORM: 'telegram@your_bot_id@your_chat_id'&#xD;
+      # MESSAGE_PLATFORM: 'gotify@app_token'&#xD;
+      # MESSAGE_PLATFORM: 'pushbullet@your_api_key@your_device_id'&#xD;
+      # MESSAGE_PLATFORM: 'pushover@your_user_key@your_app_api_token'&#xD;
+      # MESSAGE_PLATFORM: 'discord@webhook_url'&#xD;
+      # MESSAGE_PLATFORM: 'ntfy@topic_title'&#xD;
+      # MESSAGE_PLATFORM: 'slack@bot_user_oauth_token@your_chat_id'&#xD;
+      # MESSAGE_PLATFORM: ''&#xD;
       &#xD;
       # Optional - includes or excludes specified containers - default behaviour is false&#xD;
         LABEL_ENABLE: 'false'&#xD;
@@ -26,36 +33,45 @@
       # Optional - only show when container state changes to being offline (paused, exited, running (unhealthy), or dead) - default is false&#xD;
         ONLY_OFFLINE_STATES: 'false'&#xD;
       &#xD;
-      # [Optional] - Regardless of any other settings, you can ignore or include 'exited'. (So it won't alert if you manually stop a container)&#xD;
+      #  - Regardless of any other settings, you can ignore or include 'exited'. (So it won't alert if you manually stop a container)&#xD;
         EXCLUDE_EXITED: 'false'      &#xD;
 &#xD;
-      # [Optional] - Set the poll period in seconds. Defaults to 10 seconds, which is also the minimum. &#xD;
+      #  - Set the poll period in seconds. Defaults to 10 seconds, which is also the minimum. &#xD;
         PERIOD: 10&#xD;
  &#xD;
-     # [Optional] - Supress startup messages from being sent. Default is false&#xD;
+     #  - Supress startup messages from being sent. Default is false&#xD;
        DISABLE_STARTUP_MSG: 'false'&#xD;
  &#xD;
-     # [optional] - adds SHA ID for all container references. 'true' or 'false' (default)&#xD;
+     #  - adds SHA ID for all container references. 'true' or 'false' (default)&#xD;
        SHA: 'false'&#xD;
-</Overview>
+&#xD;
+      ## ADVANCED NTFY SETTINGS&#xD;
+      #CUSTOM_NTFY_SERVER: 'https://custom.ntfy.com' # use your own NTFY server&#xD;
+      #NTFY_USER: 'user' # use a username and password to login (on ntfy.sh or your own server. Option if you have your own server open)&#xD;
+      #NTFY_PASS: 'password' </Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/petersem/unraid-templates/main/monocker/monocker.xml</TemplateURL>
+  <TemplateURL/>
   <Icon>https://github.com/petersem/monocker/blob/master/android-chrome-512x512.png?raw=true</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1715586740</DateInstalled>
-  <DonateText>Please support future development</DonateText>
-  <DonateLink>https://www.paypal.com/paypalme/thanksmp</DonateLink>
+  <DateInstalled>1716279749</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
   <Requires/>
   <Config Name="Docker" Target="/var/run/docker.sock" Default="" Mode="ro" Description="Allows Monocker to access the list of running containers on Unraid. (Do not change or remove this!)" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
   <Config Name="Server label" Target="SERVER_LABEL" Default="" Mode="" Description="[Optional] Allows you to add a server-specific label to alert messages. Handy if you have multiple servers running Docker." Type="Variable" Display="always" Required="false" Mask="false">Unraid</Config>
-  <Config Name="Message platform" Target="MESSAGE_PLATFORM" Default="" Mode="" Description="The details for connecting to a specific message platform. " Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Server avatar" Target="SERVER_AVATAR" Default="https://content.invisioncic.com/u329766/monthly_2024_05/monocker.png.ba5ffdb390b627097d2a53645cf87350.png" Mode="rw" Description="Optional avatar image URL to add to messages. Handy if you are running Monocker on different machines (ONLY supported by discord, slack &amp;amp; ntfy)&#13;&#10;  " Type="Path" Display="always" Required="false" Mask="false">https://content.invisioncic.com/u329766/monthly_2024_05/monocker.png.ba5ffdb390b627097d2a53645cf87350.png</Config>
+  <Config Name="[Optional] Docker socket address" Target="DOCKER_HOST" Default="" Mode="" Description="[Optional] - Set this value to a docker socket URL, if you want to connect to docker this way. Leave it blank or omit it otherwise. e.g tcp://n.n.n.n:2375" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Message platform" Target="MESSAGE_PLATFORM" Default="" Mode="" Description="The details for connecting to a specific message platform. " Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Label Enable" Target="LABEL_ENABLE" Default="false" Mode="" Description="[Optional] Includes or excludes specified containers that have the " Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="Only offline states" Target="ONLY_OFFLINE_STATES" Default="false" Mode="" Description="[Optional] Only monitor container state changing to being offline. (Paused, Exited, Running (unhealth), or Dead). Default is false." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="Exclude exited" Target="EXCLUDE_EXITED" Default="false" Mode="" Description="[Optional] Regardless of any other settings, you can  choose to ignore or include container states moving to 'Exited'. (This will optionally show or ignore manual stops or containers). " Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="Period" Target="PERIOD" Default="10" Mode="" Description=" [Optional] - Set the poll period in seconds. Defaults to 10 seconds, which is also the minimum. " Type="Variable" Display="always" Required="false" Mask="false">10</Config>
   <Config Name="Disable startup messages" Target="DISABLE_STARTUP_MSG" Default="false" Mode="" Description="[Optional] Suppress startup messages being sent when Monocker starts up" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="SHA" Target="SHA" Default="false" Mode="" Description="[optional] - adds SHA ID for all container alerts. 'true' or 'false' (default)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Custom NTFY server" Target="CUSTOM_NTFY_SERVER" Default="" Mode="" Description="Use this if you self-host a NTFY server.&#13;&#10;e.g. https://ntfy.yourdomain.com" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="NTFY userid" Target="NTFY_USER" Default="" Mode="" Description="If you need to authenticate to the official NTFY site or a self-hosted site" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Password for NTFY authentication" Target="NTFY_PASS" Default="" Mode="" Description="Password for NTFY authentication" Type="Variable" Display="always" Required="false" Mask="true"/>
 </Container>
