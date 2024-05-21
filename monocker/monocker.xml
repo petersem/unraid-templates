@@ -17,7 +17,7 @@
     - pushover@your_user_key@your_app_api_token
     - discord@webhook_url
     - ntfy@topic_title
-    - slack@bot_user_oauth_token@your_chat_id
+    - slack@bot_user_oauth_token@your_chat_id</Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI/>
   <TemplateURL/>
