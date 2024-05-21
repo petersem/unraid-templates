@@ -2,53 +2,22 @@
 <Container version="2">
   <Name>monocker</Name>
   <Repository>petersem/monocker</Repository>
-  <Registry/>
+  <Registry>https://hub.docker.com/r/petersem/monocker</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/165085-support-monocker/</Support>
   <Project>https://github.com/petersem/monocker</Project>
-  <Overview>Monitors Docker (MONitors dOCKER) containers and alerts on 'state' change.&#xD;
-&#xD;
-      # Optional server name for alerts&#xD;
-        SERVER_LABEL: 'Prod'&#xD;
-      # Optional avatar image URL to add to messages. Handy if you are running Monocker on different machines&#xD;
-      # -&amp;gt; ONLY supported by discord, slack &amp;amp; ntfy&#xD;
-      SERVER_AVATAR: 'https://content.invisioncic.com/u329766/monthly_2024_05/monocker.png.ba5ffdb390b627097d2a53645cf87350.png'&#xD;
-&#xD;
-      # Specify the messaging platform and details, or leave blank if only wanting container logs (pick one only)&#xD;
-      MESSAGE_PLATFORM: 'telegram@your_bot_id@your_chat_id'&#xD;
-      # MESSAGE_PLATFORM: 'gotify@app_token'&#xD;
-      # MESSAGE_PLATFORM: 'pushbullet@your_api_key@your_device_id'&#xD;
-      # MESSAGE_PLATFORM: 'pushover@your_user_key@your_app_api_token'&#xD;
-      # MESSAGE_PLATFORM: 'discord@webhook_url'&#xD;
-      # MESSAGE_PLATFORM: 'ntfy@topic_title'&#xD;
-      # MESSAGE_PLATFORM: 'slack@bot_user_oauth_token@your_chat_id'&#xD;
-      # MESSAGE_PLATFORM: ''&#xD;
-      &#xD;
-      # Optional - includes or excludes specified containers - default behaviour is false&#xD;
-        LABEL_ENABLE: 'false'&#xD;
-      &#xD;
-      # Optional - only show when container state changes to being offline (paused, exited, running (unhealthy), or dead) - default is false&#xD;
-        ONLY_OFFLINE_STATES: 'false'&#xD;
-      &#xD;
-      #  - Regardless of any other settings, you can ignore or include 'exited'. (So it won't alert if you manually stop a container)&#xD;
-        EXCLUDE_EXITED: 'false'      &#xD;
-&#xD;
-      #  - Set the poll period in seconds. Defaults to 10 seconds, which is also the minimum. &#xD;
-        PERIOD: 10&#xD;
- &#xD;
-     #  - Supress startup messages from being sent. Default is false&#xD;
-       DISABLE_STARTUP_MSG: 'false'&#xD;
- &#xD;
-     #  - adds SHA ID for all container references. 'true' or 'false' (default)&#xD;
-       SHA: 'false'&#xD;
-&#xD;
-      ## ADVANCED NTFY SETTINGS&#xD;
-      #CUSTOM_NTFY_SERVER: 'https://custom.ntfy.com' # use your own NTFY server&#xD;
-      #NTFY_USER: 'user' # use a username and password to login (on ntfy.sh or your own server. Option if you have your own server open)&#xD;
-      #NTFY_PASS: 'password' </Overview>
+  <Overview>Monitors Docker (MONitors dOCKER) containers and alerts on 'state' change.
+  Pick one of the following 'message platforms':
+    - telegram@your_bot_id@your_chat_id
+    - gotify@app_token
+    - pushbullet@your_api_key@your_device_id
+    - pushover@your_user_key@your_app_api_token
+    - discord@webhook_url
+    - ntfy@topic_title
+    - slack@bot_user_oauth_token@your_chat_id
   <Category>Tools: Status:Stable</Category>
   <WebUI/>
   <TemplateURL/>
