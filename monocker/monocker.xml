@@ -11,13 +11,17 @@
   <Project>https://github.com/petersem/monocker</Project>
   <Overview>Monitors Docker (MONitors dOCKER) containers and alerts on 'state' change.
   Pick one of the following 'message platforms':
-    - telegram@your_bot_id@your_chat_id
-    - gotify@app_token
-    - pushbullet@your_api_key@your_device_id
-    - pushover@your_user_key@your_app_api_token
-    - discord@webhook_url
-    - ntfy@topic_title
-    - slack@bot_user_oauth_token@your_chat_id</Overview>
+
+  - pushbullet@your_api_key@your_device_id
+  - pushover@your_user_key@your_app_api_token
+  - discord@webhook_url
+  - ntfy@topic_title
+  - slack@bot_user_oauth_token@your_chat_id
+  - gotify@server_url@app_token
+  - telegram@your_bot_id@your_chat_id
+  - matrix@https://matrix.org@user:matrix.org@access-token@room-id:matrix.org 
+  
+  (For Matrix, add the userid 'without' the leading @ sign. Values are server, userid, access-token, room-id)</Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI/>
   <TemplateURL/>
@@ -32,7 +36,7 @@
   <Config Name="Docker" Target="/var/run/docker.sock" Default="" Mode="ro" Description="Allows Monocker to access the list of running containers on Unraid. (Do not change or remove this!)" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
   <Config Name="Server label" Target="SERVER_LABEL" Default="" Mode="" Description="[Optional] Allows you to add a server-specific label to alert messages. Handy if you have multiple servers running Docker." Type="Variable" Display="always" Required="false" Mask="false">Unraid</Config>
   <Config Name="Server Avatar" Target="SERVER_AVATAR" Default="https://content.invisioncic.com/u329766/monthly_2024_05/monocker.png.ba5ffdb390b627097d2a53645cf87350.png" Mode="" Description="Optional avatar image URL to add to messages. Handy if you are running Monocker on different machines (ONLY supported by discord, slack &amp;amp; ntfy)" Type="Variable" Display="always" Required="false" Mask="false">https://content.invisioncic.com/u329766/monthly_2024_05/monocker.png.ba5ffdb390b627097d2a53645cf87350.png</Config>
-  <Config Name="[Optional] Docker socket address" Target="DOCKER_HOST" Default="" Mode="" Description="[Optional] - Set this value to a docker socket URL, if you want to connect to docker this way. Leave it blank or omit it otherwise. e.g tcp://n.n.n.n:2375" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Docker socket address" Target="DOCKER_HOST" Default="" Mode="" Description="[Optional] - Set this value to a docker socket URL, if you want to connect to docker this way. Leave it blank or omit it otherwise. e.g tcp://n.n.n.n:2375" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Message platform" Target="MESSAGE_PLATFORM" Default="" Mode="" Description="The details for connecting to a specific message platform. " Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Label Enable" Target="LABEL_ENABLE" Default="false" Mode="" Description="[Optional] Includes or excludes specified containers that have the " Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="Only offline states" Target="ONLY_OFFLINE_STATES" Default="false" Mode="" Description="[Optional] Only monitor container state changing to being offline. (Paused, Exited, Running (unhealth), or Dead). Default is false." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
