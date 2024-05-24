@@ -19,9 +19,12 @@
   - slack@bot_user_oauth_token@your_chat_id
   - gotify@server_url@app_token
   - telegram@your_bot_id@your_chat_id
-  - matrix@https://matrix.org@user:matrix.org@access-token@room-id:matrix.org 
+  - matrix@https://matrix.org@user:matrix.org@access-token@room-id:matrix.org
+  - apprise@apprise_url@config_id@tag
   
-  (For Matrix, add the userid 'without' the leading @ sign. Values are server, userid, access-token, room-id)</Overview>
+  (For Matrix, add the userid 'without' the leading @ sign. Values are server, userid, access-token, room-id)
+  (For Apprise, only one tag is supported, and server_avatar is not currently supported)
+  </Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI/>
   <TemplateURL/>
