@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>autoheal</Name>
+  <Repository>willfarrell/autoheal</Repository>
+  <Registry>https://hub.docker.com/r/willfarrell/autoheal</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/willfarrell/docker-autoheal/issues</Support>
+  <Project>https://github.com/willfarrell/docker-autoheal</Project>
+  <Overview>Monitor and restart unhealthy docker containers. This functionality was proposed to be included with the addition of HEALTHCHECK, however didn't make the cut. This container is a stand-in till there is native support for --exit-on-unhealthy</Overview>
+  <Category>Tools: Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams>--restart=always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1727840039</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="AUTOHEAL_CONTAINER_LABEL" Target="AUTOHEAL_CONTAINER_LABEL" Default="all" Mode="" Description="all - to monitor all containers&#13;&#10;heal - to montor containers with labels of AUTOHEAL_CONTAINER_LABEL=heal" Type="Variable" Display="always" Required="true" Mask="false">all</Config>
+  <Config Name="AUTOHEAL_INTERVAL" Target="AUTOHEAL_INTERVAL" Default="5" Mode="" Description="The period to check for unhealthy containers" Type="Variable" Display="always" Required="false" Mask="false">5</Config>
+  <Config Name="AUTOHEAL_START_PERIOD" Target="AUTOHEAL_START_PERIOD" Default="0" Mode="" Description="wait 0 seconds before first health check" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="DOCKER_SOCK" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="path to docker.sock " Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+</Container>
